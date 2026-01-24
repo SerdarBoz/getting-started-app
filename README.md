@@ -1,13 +1,12 @@
-# Getting started
-
-This repository is a sample application for users following the getting started guide at https://docs.docker.com/get-started/.
-
-The application is based on the application from the getting started tutorial at https://github.com/docker/getting-started
-
 # CI/CD Getting Started App
 
 ## Doel
 Deze repository bevat een eenvoudige Node.js applicatie met een CI/CD pipeline.
+Het doel is om bij elke wijziging automatisch een Docker image te builden en te publiceren.
+
+## Applicatie
+De applicatie is gebaseerd op de officiële Docker *Getting Started* tutorial:
+https://docs.docker.com/get-started/
 
 ## Technologieën
 - Node.js
@@ -16,10 +15,12 @@ Deze repository bevat een eenvoudige Node.js applicatie met een CI/CD pipeline.
 - GitHub Container Registry (GHCR)
 
 ## CI/CD Werking
-Bij elke push naar de `main` branch:
-1. Wordt automatisch een Docker image gebouwd
-2. Wordt de image gepubliceerd naar GitHub Packages
+Bij elke push naar de `main` branch wordt via een GitHub Actions workflow:
+1. De repository uitgecheckt
+2. Een Docker image gebouwd
+3. De image automatisch gepubliceerd naar GitHub Packages (GHCR)
 
 ## Resultaat
 - Werkende GitHub Action (minstens 1 succesvolle run)
-- Gepubliceerde Docker image zichtbaar in GitHub Packages
+- Docker image gepubliceerd via GitHub Packages
+- Elke codewijziging triggert automatisch een nieuwe image
